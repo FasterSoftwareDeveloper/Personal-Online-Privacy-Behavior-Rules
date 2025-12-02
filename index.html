@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg-color: #0d1117;
@@ -35,6 +36,162 @@
       background-color: var(--bg-color);
       color: var(--text-color);
       line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(47, 129, 247, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(248, 81, 73, 0.15) 0%, transparent 50%);
+      background-attachment: fixed;
+    }
+
+    .noise {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--glass-border);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+      z-index: 100;
+    }
+
+    nav h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--accent);
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, var(--purple) 0%, var(--accent) 50%, var(--pink) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2.5rem;
+      background-color: var(--card-bg);
+      border-radius: 24px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      animation: fadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .header-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+    }
+
+    .rule {
+      margin-bottom: 2.5rem;
+      padding: 1.5rem;
+      border-radius: 16px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      border-left: 4px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rule:hover {
+      background-color: rgba(48, 54, 61, 0.4);
+      border-left: 4px solid var(--accent);
+      transform: translateX(8px);
+      box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .rule-number {
+      display: inline-flex;
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
+      color: white;
+      border-radius: 8px;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .floating-shapes {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.15;
+    }
+
+    .shape-1 {
+      width: 300px;
+      height: 300px;
+      background-color: var(--accent);
+      top: 10%;
+      left: 5%;
+      animation: float 15s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-40px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="noise"></div>
+<nav><h1>Personal Online Privacy & Behavior Rules</h1></nav>
+
+<div class="container">
+
+  <!-- Your rules 1–15 here -->
+  <!-- Add your rule 16 here inside the container -->
+
+</div>
+
+</body>
+</html>      line-height: 1.6;
       overflow-x: hidden;
       background-image: 
         radial-gradient(circle at 25% 25%, rgba(47, 129, 247, 0.15) 0%, transparent 50%),
@@ -433,14 +590,12 @@
   </div>
 
   <script>
-    // Enhanced security and animations
     document.addEventListener('contextmenu', e => {
       e.preventDefault();
       showToast('🚨 Security Protocol: Right-click disabled');
     });
 
     document.addEventListener('keydown', e => {
-      // Block F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
       if (e.key === 'F12' || 
           (e.ctrlKey && e.shiftKey && e.key === 'I') || 
           (e.ctrlKey && e.shiftKey && e.key === 'J') || 
@@ -475,7 +630,6 @@
       }, 3500);
     }
 
-    // Add fadeOut animation
     const style = document.createElement('style');
     style.textContent = `
       @keyframes fadeOut {
@@ -484,8 +638,7 @@
       }
     `;
     document.head.appendChild(style);
-
-    // Animate rules on scroll with staggered delay
+    
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -502,13 +655,11 @@
       observer.observe(rule);
     });
 
-    // Add pulse animation to emojis in headers
     const emojis = document.querySelectorAll('.emoji');
     emojis.forEach(emoji => {
       emoji.style.animation = 'pulse 2s infinite';
     });
-
-    // Add cool hover effect to badges
+    
     const badges = document.querySelectorAll('.badge');
     badges.forEach(badge => {
       badge.style.transition = 'all 0.3s ease';
