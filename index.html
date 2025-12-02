@@ -1,519 +1,223 @@
-<!DOCTYPE html>  <html lang="en">  
-<head>  
-  <meta charset="UTF-8">  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <title>🌐 Personal Online Privacy & Behavior Rules | 🔒 2025-2027</title>  
-  <link rel="preconnect" href="https://fonts.googleapis.com">  
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">  
-  <style>  
-    :root {  
-      --bg-color: #0d1117;  
-      --card-bg: rgba(22, 27, 34, 0.85);  
-      --text-color: #e6edf3;  
-      --accent: #2f81f7;  
-      --accent-hover: #58a6ff;  
-      --border-color: #30363d;  
-      --success: #3fb950;  
-      --warning: #d29922;  
-      --error: #f85149;  
-      --glass-bg: rgba(13, 17, 23, 0.6);  
-      --glass-border: rgba(240, 246, 252, 0.1);  
-      --purple: #bc8cff;  
-      --pink: #ff7b72;  
-    }  * {  
-  margin: 0;  
-  padding: 0;  
-  box-sizing: border-box;  
-}  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌐 Personal Online Privacy & Behavior Rules | 🔒 2025-2027</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0d1117;
+      --card-bg: rgba(22, 27, 34, 0.85);
+      --text-color: #e6edf3;
+      --accent: #2f81f7;
+      --accent-hover: #58a6ff;
+      --border-color: #30363d;
+      --success: #3fb950;
+      --warning: #d29922;
+      --error: #f85149;
+      --glass-bg: rgba(13, 17, 23, 0.6);
+      --glass-border: rgba(240, 246, 252, 0.1);
+      --purple: #bc8cff;
+      --pink: #ff7b72;
+    }
 
-body {  
-  font-family: 'Inter', sans-serif;  
-  background-color: var(--bg-color);  
-  color: var(--text-color);  
-  line-height: 1.6;  
-  overflow-x: hidden;  
-  background-image:   
-    radial-gradient(circle at 25% 25%, rgba(47, 129, 247, 0.15) 0%, transparent 50%),  
-    radial-gradient(circle at 75% 75%, rgba(248, 81, 73, 0.15) 0%, transparent 50%);  
-  background-attachment: fixed;  
-}  
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.noise {  
-  position: fixed;  
-  top: 0;  
-  left: 0;  
-  width: 100%;  
-  height: 100%;  
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");  
-  pointer-events: none;  
-  z-index: -1;  
-}  
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(47, 129, 247, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(248, 81, 73, 0.15) 0%, transparent 50%);
+      background-attachment: fixed;
+    }
 
-nav {  
-  position: sticky;  
-  top: 0;  
-  background-color: var(--glass-bg);  
-  backdrop-filter: blur(16px);  
-  -webkit-backdrop-filter: blur(16px);  
-  padding: 1.5rem 2rem;  
-  border-bottom: 1px solid var(--glass-border);  
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);  
-  z-index: 100;  
-}  
+    .noise {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: -1;
+    }
 
-nav h1 {  
-  font-family: 'Space Grotesk', sans-serif;  
-  color: var(--accent);  
-  font-size: 1.8rem;  
-  font-weight: 700;  
-  text-align: center;  
-  letter-spacing: -0.5px;  
-  background: linear-gradient(90deg, var(--purple) 0%, var(--accent) 50%, var(--pink) 100%);  
-  -webkit-background-clip: text;  
-  -webkit-text-fill-color: transparent;  
-  background-clip: text;  
-  text-fill-color: transparent;  
-}  
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--glass-border);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+      z-index: 100;
+    }
 
-.container {  
-  max-width: 900px;  
-  margin: 3rem auto;  
-  padding: 2.5rem;  
-  background-color: var(--card-bg);  
-  border-radius: 24px;  
-  border: 1px solid var(--border-color);  
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);  
-  backdrop-filter: blur(12px);  
-  -webkit-backdrop-filter: blur(12px);  
-  animation: fadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1);  
-}  
+    nav h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--accent);
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, var(--purple) 0%, var(--accent) 50%, var(--pink) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
 
-.header-info {  
-  display: flex;  
-  justify-content: space-between;  
-  margin-bottom: 2rem;  
-  padding-bottom: 1.5rem;  
-  border-bottom: 1px solid var(--border-color);  
-}  
+    .container {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2.5rem;
+      background-color: var(--card-bg);
+      border-radius: 24px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      animation: fadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
 
-.header-info p {  
-  font-size: 0.95rem;  
-  color: #8b949e;  
-}  
+    .header-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
 
-h2 {  
-  font-family: 'Space Grotesk', sans-serif;  
-  color: var(--accent);  
-  margin-bottom: 1rem;  
-  font-size: 1.4rem;  
-  font-weight: 600;  
-  letter-spacing: -0.5px;  
-  display: flex;  
-  align-items: center;  
-}  
+    .header-info p {
+      font-size: 0.95rem;
+      color: #8b949e;
+    }
 
-.rule {  
-  margin-bottom: 2.5rem;  
-  padding: 1.5rem;  
-  border-radius: 16px;  
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);  
-  border-left: 4px solid transparent;  
-  position: relative;  
-  overflow: hidden;  
-}  
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+    }
 
-.rule:hover {  
-  background-color: rgba(48, 54, 61, 0.4);  
-  border-left: 4px solid var(--accent);  
-  transform: translateX(8px);  
-  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);  
-}  
+    .rule {
+      margin-bottom: 2.5rem;
+      padding: 1.5rem;
+      border-radius: 16px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      border-left: 4px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
 
-.rule::before {  
-  content: '';  
-  position: absolute;  
-  top: 0;  
-  left: 0;  
-  width: 100%;  
-  height: 100%;  
-  background: linear-gradient(90deg, rgba(47, 129, 247, 0.1) 0%, transparent 100%);  
-  opacity: 0;  
-  transition: opacity 0.3s ease;  
-}  
+    .rule:hover {
+      background-color: rgba(48, 54, 61, 0.4);
+      border-left: 4px solid var(--accent);
+      transform: translateX(8px);
+      box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+    }
 
-.rule:hover::before {  
-  opacity: 1;  
-}  
+    .rule::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(47, 129, 247, 0.1) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
 
-p {  
-  font-size: 1.05rem;  
-  line-height: 1.7;  
-  font-weight: 400;  
-}  
+    .rule:hover::before {
+      opacity: 1;
+    }
 
-.rule-number {  
-  display: inline-flex;  
-  width: 32px;  
-  height: 32px;  
-  background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);  
-  color: white;  
-  border-radius: 8px;  
-  align-items: center;  
-  justify-content: center;  
-  margin-right: 12px;  
-  font-weight: 700;  
-  font-size: 0.95rem;  
-  box-shadow: 0 4px 8px rgba(47, 129, 247, 0.3);  
-}  
+    p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      font-weight: 400;
+    }
 
-footer {  
-  text-align: center;  
-  margin-top: 3rem;  
-  padding-top: 2rem;  
-  border-top: 1px solid var(--border-color);  
-  font-size: 0.95rem;  
-  color: #8b949e;  
-  font-style: italic;  
-}  
+    .rule-number {
+      display: inline-flex;
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
+      color: white;
+      border-radius: 8px;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 8px rgba(47, 129, 247, 0.3);
+    }
 
-.badge {  
-  display: inline-flex;  
-  padding: 0.35rem 0.8rem;  
-  border-radius: 20px;  
-  font-size: 0.8rem;  
-  font-weight: 600;  
-  margin-left: 0.5rem;  
-  vertical-align: middle;  
-  align-items: center;  
-  gap: 4px;  
-}  
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.95rem;
+      color: #8b949e;
+      font-style: italic;
+    }
 
-.badge-primary {  
-  background-color: rgba(47, 129, 247, 0.2);  
-  color: var(--accent);  
-}  
+    .badge {
+      display: inline-flex;
+      padding: 0.35rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+      align-items: center;
+      gap: 4px;
+    }
 
-.badge-success {  
-  background-color: rgba(35, 134, 54, 0.2);  
-  color: var(--success);  
-}  
+    .badge-primary {
+      background-color: rgba(47, 129, 247, 0.2);
+      color: var(--accent);
+    }
 
-.badge-warning {  
-  background-color: rgba(210, 153, 34, 0.2);  
-  color: var(--warning);  
-}  
+    .badge-success {
+      background-color: rgba(35, 134, 54, 0.2);
+      color: var(--success);
+    }
 
-.badge-error {  
-  background-color: rgba(248, 81, 73, 0.2);  
-  color: var(--error);  
-}  
+    .badge-warning {
+      background-color: rgba(210, 153, 34, 0.2);
+      color: var(--warning);
+    }
 
-.floating-shapes {  
-  position: fixed;  
-  top: 0;  
-  left: 0;  
-  width: 100%;  
-  height: 100%;  
-  pointer-events: none;  
-  z-index: -1;  
-  overflow: hidden;  
-}  
+    .badge-error {
+      background-color: rgba(248, 81, 73, 0.2);
+      color: var(--error);
+    }
 
-.shape {  
-  position: absolute;  
-  border-radius: 50%;  
-  filter: blur(60px);  
-  opacity: 0.15;  
-}  
-
-.shape-1 {  
-  width: 300px;  
-  height: 300px;  
-  background-color: var(--accent);  
-  top: 10%;  
-  left: 5%;  
-  animation: float 15s ease-in-out infinite;  
-}  
-
-.shape-2 {  
-  width: 400px;  
-  height: 400px;  
-  background-color: var(--error);  
-  bottom: 5%;  
-  right: 10%;  
-  animation: float 18s ease-in-out infinite reverse;  
-}  
-
-.shape-3 {  
-  width: 200px;  
-  height: 200px;  
-  background-color: var(--warning);  
-  top: 50%;  
-  right: 20%;  
-  animation: float 12s ease-in-out infinite 2s;  
-}  
-
-.shape-4 {  
-  width: 250px;  
-  height: 250px;  
-  background-color: var(--purple);  
-  bottom: 15%;  
-  left: 10%;  
-  animation: float 14s ease-in-out infinite 1s;  
-}  
-
-@keyframes fadeIn {  
-  from { opacity: 0; transform: translateY(30px); }  
-  to { opacity: 1; transform: translateY(0); }  
-}  
-
-@keyframes float {  
-  0% { transform: translate(0, 0) rotate(0deg); }  
-  50% { transform: translate(30px, 50px) rotate(180deg); }  
-  100% { transform: translate(0, 0) rotate(360deg); }  
-}  
-
-@keyframes pulse {  
-  0% { transform: scale(1); }  
-  50% { transform: scale(1.05); }  
-  100% { transform: scale(1); }  
-}  
-
-.emoji {  
-  font-size: 1.2em;  
-  margin-right: 8px;  
-  vertical-align: middle;  
-  animation: pulse 2s infinite;  
-}  
-
-.emoji-static {  
-  font-size: 1.2em;  
-  margin-right: 8px;  
-  vertical-align: middle;  
-}  
-
-.highlight {  
-  background: linear-gradient(90deg, var(--purple) 0%, var(--accent) 100%);  
-  -webkit-background-clip: text;  
-  -webkit-text-fill-color: transparent;  
-  background-clip: text;  
-  text-fill-color: transparent;  
-  font-weight: 600;  
-}  
-
-.glow {  
-  text-shadow: 0 0 10px rgba(47, 129, 247, 0.5);  
-}  
-
-@media (max-width: 768px) {  
-  .container {  
-    margin: 1rem;  
-    padding: 1.5rem;  
-    border-radius: 16px;  
-  }  
-
-  nav h1 {  
-    font-size: 1.5rem;  
-  }  
-
-  .header-info {  
-    flex-direction: column;  
-    gap: 0.5rem;  
-  }  
-}
-
-  </style>  
-</head>  
-<body>  
-  <div class="noise"></div>  
-  <div class="floating-shapes">  
-    <div class="shape shape-1"></div>  
-    <div class="shape shape-2"></div>  
-    <div class="shape shape-3"></div>  
-    <div class="shape shape-4"></div>  
-  </div>    <nav>  
-    <h1>🌐 Personal Online Privacy & Behavior Rules <span class="emoji-static">🔒</span></h1>  
-  </nav>    <div class="container">  
-    <div class="header-info">  
-      <p><span class="emoji">👨‍💻</span> <strong>Role:</strong> Full Stack Developer <span class="badge badge-primary">🚀 Rules Date: 2025-2027</span></p>  
-      <p><span class="emoji">🔖</span> <strong>Version:</strong> Personal Code <span class="badge badge-success">✅ Active</span></p>  
-    </div>  <div class="rule">  
-  <h2><span class="rule-number">1</span> <span class="emoji">💬</span> Respectful Language Only</h2>  
-  <p>I will never use abusive, insulting, or vulgar words online. <span class="highlight">If someone disrespects me</span>, I'll either ignore, block, or move on calmly without negative response.</p>  
-</div>  
-
-<div class="rule">  
-  <h2><span class="rule-number">2</span> <span class="emoji">🛡️</span> No Personal Data Leaks</h2>  
-  <p>Strict no-share policy for real names, addresses, phone numbers, or sensitive data. <span class="emoji-static">🔐</span> Some shared details will be intentionally false to protect against hacking risks.</p>  
-</div>  
-
-<div class="rule">  
-  <h2><span class="rule-number">3</span> <span class="emoji">⏳</span> Controlled Online Time</h2>  
-  <p>Maximum <span class="highlight">6-hour daily engagement</span> window. <span class="emoji-static">🌙</span> Digital disconnection begins at 9:00 PM with sleep routine by 11:00 PM.</p>  
-</div>  
-
-<div class="rule">  
-  <h2><span class="rule-number">4</span> <span class="emoji">🚫</span> No Repetitive Behavior</h2>  
-  <p>I won't repeat the same messages without reason. <span class="emoji-static">🔁</span> Clear, progressive communication only. I expect the same standard from others.</p>  
-</div>  
-
-<div class="rule">  
-  <h2><span class="rule-number">5</span> <span class="emoji">⚖️</span> No Leaking or Hacking</h2>  
-  <p>Zero-tolerance for sharing private conversations or content. <span class="emoji-static">🔏</span> No attempts to compromise others' privacy through unauthorized access.</p>  
-</div>  
-
-<div class="rule">  
-  <h2><span class="rule-number">6</span> <span class="emoji">🧹</span> Clean, Positive Topics</h2>  
-  <p>No engagement with harmful, illegal, or inappropriate content. <span class="emoji-static">🎯</span> Conversations steered toward useful, creative, and safe subjects.</p>  
-</div>  
-
-<div class="rule">  
-  <h2><span class="rule-number">7</span> <span class="emoji">🌍</span> Hidden Identity & Location</h2>  
-  <p>Geolocation services permanently disabled. <span class="emoji-static">🛰️</span> No revealing of country, city, or birthplace in profiles or communications.</p>  
-</div>  
-
-<div class="rule">  
-  <h2><span class="rule-number">8</span> <span class="emoji">✊</span> Ethical Stance: Support Palestine</h2>  
-  <p>I stand against oppressive regimes and support Palestine. <span class="emoji-static">💙</span> Will offer help, voice, and support through secure channels when possible.</p>  
-</div>  
-
-<div class="rule">  
-  <h2><span class="rule-number">9</span> <span class="emoji">🧠</span> Kindness and Growth Over Ego</h2>  
-  <p>Empathetic treatment of others regardless of reciprocation. <span class="emoji-static">📝</span> Quick to admit mistakes and focus on continuous personal growth.</p>  
-</div>  
-
-<div class="rule">  
-  <h2><span class="rule-number">10</span> <span class="emoji">🔗</span> No Unwanted Links or Media</h2>  
-  <p>No clicking unknown links or untrusted downloads. <span class="emoji-static">📥</span> Zero tolerance for spreading harmful, fake, or disturbing content.</p>  
-</div>  
-
-<div class="rule">  
-  <h2><span class="rule-number">11</span> <span class="emoji">👁️</span> Protect My Voice & Face</h2>  
-  <p>No video/voice calls without complete trust. <span class="emoji-static">🤖</span> Biometric data (voice/face) shared only on my terms with proper verification.</p>  
-</div>  
-
-<div class="rule">  
-  <h2><span class="rule-number">12</span> <span class="emoji">⏰</span> Control My Time & Energy</h2>  
-  <p>No pressure to be constantly available. <span class="emoji-static">⏳</span> Peace prioritized over instant replies. Flexible response windows maintained.</p>  
-</div>  
-
-<div class="rule">  
-  <h2><span class="rule-number">13</span> <span class="emoji">♥️</span> Guard Mental Health</h2>  
-  <p>Immediate breaks from toxic or upsetting online spaces. <span class="emoji-static">🧹</span> No tolerance for chats, apps, or groups that drain mental wellbeing.</p>  
-</div>  
-
-<div class="rule">  
-  <h2><span class="rule-number">14</span> <span class="emoji">👑</span> Avoid Fame for Privacy</h2>  
-  <p>No pursuit of viral fame that compromises security. <span class="emoji-static">📊</span> Any public profile carefully managed with strict content controls.</p>  
-</div>  
-
-<div class="rule">  
-  <h2><span class="rule-number">15</span> <span class="emoji">🦸</span> Lead by Example</h2>  
-  <p>All interactions model honesty, maturity and respect. <span class="emoji-static">🤝</span> Building trust through consistent, verifiable actions online.</p>  
-</div>  
-
-<div class="rule">  
-   <h2><span class="rule-number">16</span> <span class="emoji">🚫</span> No Social Updates</h2>  
-   <p>I don’t post or share personal photos, daily life updates, or anything similar.</p>  
-</div>  
-
-<footer>  
-  <p class="glow">"I will follow these principles from 2025 to 2027. <span class="emoji">⚡</span> Through disciplined protocols, I maintain privacy, peace and positive impact. <span class="emoji">🌌</span> My digital presence reflects strength, kindness and security."</p>  
-  <p style="margin-top: 1.5rem;"><span class="badge badge-error"><span class="emoji">⚠️</span> Warning</span> Violations trigger digital cooling-off periods and self-audits.</p>  
-</footer>
-
-  </div>    <script>  
-    // Enhanced security and animations  
-    document.addEventListener('contextmenu', e => {  
-      e.preventDefault();  
-      showToast('🚨 Security Protocol: Right-click disabled');  
-    });  
-  
-    document.addEventListener('keydown', e => {  
-      // Block F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U  
-      if (e.key === 'F12' ||   
-          (e.ctrlKey && e.shiftKey && e.key === 'I') ||   
-          (e.ctrlKey && e.shiftKey && e.key === 'J') ||   
-          (e.ctrlKey && e.key === 'u')) {  
-        e.preventDefault();  
-        showToast('🔧 Developer tools access restricted');  
-      }  
-    });  
-  
-    function showToast(message) {  
-      const toast = document.createElement('div');  
-      toast.textContent = message;  
-      toast.style.position = 'fixed';  
-      toast.style.bottom = '20px';  
-      toast.style.right = '20px';  
-      toast.style.backgroundColor = 'var(--card-bg)';  
-      toast.style.color = 'var(--error)';  
-      toast.style.padding = '14px 22px';  
-      toast.style.borderRadius = '12px';  
-      toast.style.border = '1px solid var(--error)';  
-      toast.style.boxShadow = '0 6px 16px rgba(0,0,0,0.3)';  
-      toast.style.zIndex = '1000';  
-      toast.style.animation = 'fadeIn 0.4s cubic-bezier(0.22, 1, 0.36, 1)';  
-      toast.style.display = 'flex';  
-      toast.style.alignItems = 'center';  
-      toast.style.gap = '8px';  
-      document.body.appendChild(toast);  
-        
-      setTimeout(() => {  
-        toast.style.animation = 'fadeOut 0.4s cubic-bezier(0.22, 1, 0.36, 1)';  
-        setTimeout(() => toast.remove(), 400);  
-      }, 3500);  
-    }  
-  
-    // Add fadeOut animation  
-    const style = document.createElement('style');  
-    style.textContent = `  
-      @keyframes fadeOut {  
-        from { opacity: 1; transform: translateY(0) scale(1); }  
-        to { opacity: 0; transform: translateY(20px) scale(0.95); }  
-      }  
-    `;  
-    document.head.appendChild(style);  
-  
-    // Animate rules on scroll with staggered delay  
-    const observer = new IntersectionObserver((entries) => {  
-      entries.forEach(entry => {  
-        if (entry.isIntersecting) {  
-          entry.target.style.opacity = '1';  
-          entry.target.style.transform = 'translateY(0)';  
-        }  
-      });  
-    }, { threshold: 0.1 });  
-  
-    document.querySelectorAll('.rule').forEach((rule, index) => {  
-      rule.style.opacity = '0';  
-      rule.style.transform = 'translateY(20px)';  
-      rule.style.transition = `all 0.6s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.07}s`;  
-      observer.observe(rule);  
-    });  
-  
-    // Add pulse animation to emojis in headers  
-    const emojis = document.querySelectorAll('.emoji');  
-    emojis.forEach(emoji => {  
-      emoji.style.animation = 'pulse 2s infinite';  
-    });  
-  
-    // Add cool hover effect to badges  
-    const badges = document.querySelectorAll('.badge');  
-    badges.forEach(badge => {  
-      badge.style.transition = 'all 0.3s ease';  
-      badge.addEventListener('mouseenter', () => {  
-        badge.style.transform = 'translateY(-2px)';  
-        badge.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';  
-      });  
-      badge.addEventListener('mouseleave', () => {  
-        badge.style.transform = 'translateY(0)';  
-        badge.style.boxShadow = 'none';  
-      });  
-    });  
-  </script>  </body>  
-                                                  </html>  height: 100%;
+    .floating-shapes {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       pointer-events: none;
       z-index: -1;
       overflow: hidden;
@@ -717,11 +421,6 @@ footer {
       <p>All interactions model honesty, maturity and respect. <span class="emoji-static">🤝</span> Building trust through consistent, verifiable actions online.</p>
     </div>
 
-    <div class="rule">
-       <h2><span class="rule-number">16</span> <span class="emoji">🚫</span> No Social Updates</h2>
-       <p>I don’t post or share personal photos, daily life updates, or anything similar.</p>
-    </div>
-
     <footer>
       <p class="glow">"I will follow these principles from 2025 to 2027. <span class="emoji">⚡</span> Through disciplined protocols, I maintain privacy, peace and positive impact. <span class="emoji">🌌</span> My digital presence reflects strength, kindness and security."</p>
       <p style="margin-top: 1.5rem;"><span class="badge badge-error"><span class="emoji">⚠️</span> Warning</span> Violations trigger digital cooling-off periods and self-audits.</p>
@@ -729,12 +428,14 @@ footer {
   </div>
 
   <script>
+    // Enhanced security and animations
     document.addEventListener('contextmenu', e => {
       e.preventDefault();
       showToast('🚨 Security Protocol: Right-click disabled');
     });
 
     document.addEventListener('keydown', e => {
+      // Block F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
       if (e.key === 'F12' || 
           (e.ctrlKey && e.shiftKey && e.key === 'I') || 
           (e.ctrlKey && e.shiftKey && e.key === 'J') || 
@@ -769,6 +470,7 @@ footer {
       }, 3500);
     }
 
+    // Add fadeOut animation
     const style = document.createElement('style');
     style.textContent = `
       @keyframes fadeOut {
@@ -777,7 +479,8 @@ footer {
       }
     `;
     document.head.appendChild(style);
-    
+
+    // Animate rules on scroll with staggered delay
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -794,11 +497,13 @@ footer {
       observer.observe(rule);
     });
 
+    // Add pulse animation to emojis in headers
     const emojis = document.querySelectorAll('.emoji');
     emojis.forEach(emoji => {
       emoji.style.animation = 'pulse 2s infinite';
     });
-    
+
+    // Add cool hover effect to badges
     const badges = document.querySelectorAll('.badge');
     badges.forEach(badge => {
       badge.style.transition = 'all 0.3s ease';
